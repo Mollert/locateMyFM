@@ -1,0 +1,35 @@
+
+@font-face { src: url("./crayone.otf"); font-family: crayone; }
+@font-face { src: url("./eyes.ttf"); font-family: eyes; }
+
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+	
+#topContainer {
+	margin: 0 5vw;
+	width: 90vw;
+	height: 40rem;
+	background-color: green;
+}
+
+.fonts {
+	padding: 2rem 0 0 10rem;
+	font-size: 1.8rem;
+}
+
+#crayone {
+	font-family: crayone;
+	color: tomato;
+	font-weight: 500;
+/*	font-weight: 600;*/
+	letter-spacing: 0.15rem;	
+}
+
+#eyes {
+	font-family: eyes;
+	color: black;
+	letter-spacing: 0.05rem;	
+}

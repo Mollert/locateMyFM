@@ -1,2 +1,1 @@
-# locateMyFM
-website which maps local Farmers Markets around the Charlotte, NC area
+Website which maps local Farmers Markets around the Charlotte, NC area.
