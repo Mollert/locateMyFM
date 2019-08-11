@@ -10,28 +10,28 @@ html, body {
 	width: 100%;
 	height: auto;
 	position: relative;
-	overflow: auto;
+}
+
+.imgDivs {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }
 
 .fmImages {
-/*	width: 100%;
-	height: 100%;
-	width: 32vw;
-	height: auto;*/
-	float: left;
-/*	display: block;*/
+	flex: 0 1 auto;
 }
 
 #tablet {
-	clear: left;
 	width: 70vw;
 	height: auto;
-	position: absolute;
-/*	top: 10vw;
-	left: 15vw;*/
 	background-color: green;
 	border-radius: 4rem;
 	border: 0.2rem solid black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .openingText {
@@ -56,28 +56,20 @@ html, body {
 	padding: 2rem 1rem;
 }
 
-.push {
-	width: auto;
-	height: 6rem;
-	background-color: black;
+#mapFrame {
+	width: 100%;
+	height: 100vw;
+	background-color: green;
+	opacity: 0.6;
+	position: relative;
 }
 
-#fontBox {
-	width: 12rem;
-	height: 20.6rem;
-	background-color: cornsilk;
-	font-family: crayone;
-	color: darkred;
-	font-weight: 600;
-	letter-spacing: 1.5rem;
-	font-size: 20rem;
-	text-align: center;
+#map {
+	width: 90vw;
+	height: 90vw;
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-
-
-/*
-Capital Letters = 0.72 wide, 1.03 high
-L = 0.64
-letters = 0.66 wide, 1.03 high
-i = 0.29 wide
-*/

@@ -17,60 +17,32 @@ const randomImgSelection = (arrayLength) => {
 	return randomArray;	
 };
 
+const loadRows = (allRows, eachRow, images) => {
+	let imgTally = 0;
+	let rowTally = 0;
 
-console.log(window.innerWidth);
-console.log(document.body.clientWidth);
+	for ( r = 0 ; r < allRows ; r++ ) {
+		let groupDiv = document.createElement("div");
+		groupDiv.setAttribute("class", "imgDivs");
+		document.getElementById("displayCase").appendChild(groupDiv);
 
-//let tabWidth = ((window.innerWidth) * 0.7).toFixed(2);
+		for ( i = 0 ; i < eachRow ; i++ ) {		
+			let placeImg = document.createElement("img");
+			placeImg.setAttribute("class", "fmImages");
+			placeImg.src = images[imgTally];
+			placeImg.setAttribute("width", imgW);
+			placeImg.setAttribute("height", imgH);			
+			placeImg.alt = "FarmersMarkets";
+//			console.log(placeImg);
+			document.getElementsByClassName("imgDivs")[rowTally].appendChild(placeImg);
+			imgTally++;
+		}
+		rowTally++;
+	}
+};
+
+
 let displayWidth = document.body.clientWidth;
-
-//let tabWidth = ((displayWidth) * 0.7).toFixed(2);
-//document.getElementById("tablet").style.width = tabWidth;
-let tabWidth = document.getElementById("tablet").clientWidth;
-
-//tabWidth = parseFloat(tabWidth);
-let tabLeftPostion = Math.ceil((displayWidth - (tabWidth + 3.2 + 3.2)) / 2);
-document.getElementById("tablet").style.left = tabLeftPostion + "px";
-
-console.log(document.getElementById("tablet").clientWidth);
-
-let lookWidth = tabWidth - 96.0;
-let lookNumChar = (document.getElementById("looking").textContent).length;
-console.log(tabWidth + " " + lookWidth + " " + lookNumChar);
-let lookLineLength = (lookNumChar * 18).toFixed(2);
-
-let numLookLines = Math.ceil(lookLineLength / lookWidth);
-
-//console.log(lookLineLength + ' = lenght of "Look Line"');
-//console.log(numLookLines + " = number of lines for this page width");
-
-let explainWidth = tabWidth - 64.0;
-let explainNumChar = (document.getElementById("explain").textContent).length;
-let explainLineLength = (explainNumChar * 12).toFixed(2);
-
-let numExplainLines = Math.ceil(explainLineLength / explainWidth);
-console.log(numExplainLines);
-
-
-let quoteWidth = tabWidth - 32.0;
-let quoteNumChar = (document.getElementById("quote").textContent).length;
-let quoteLineLength = (quoteNumChar * 14).toFixed(2);
-
-let numQuoteLines = Math.ceil(quoteLineLength / quoteWidth);
-console.log(numQuoteLines);
-
-
-let lookHeight = (numLookLines * 43) + 21.4 + 21.4 + 16 + 16;
-console.log(lookHeight);
-
-let explainHeight = numExplainLines * 26;
-console.log(explainHeight);
-
-let quoteHeight = (numQuoteLines * 30) + 32 + 32;
-console.log(quoteHeight);
-
-let tabHeight = lookHeight + explainHeight + quoteHeight;
-console.log(tabHeight);
 
 let inRow = 2;
 if (displayWidth <= 700) {
@@ -85,48 +57,22 @@ if (displayWidth <= 700) {
 
 let imgW = (displayWidth / inRow).toFixed(2);
 let imgH = (imgW * 2 / 3).toFixed(2);
-
 imgH = parseFloat(imgH);
-let numRows = Math.ceil((tabHeight + imgH) / imgH);
-let tabTopPostion = Math.ceil(imgH / 2);
-document.getElementById("tablet").style.top = tabTopPostion + "px";
 
-console.log(numRows);
+window.onload = () => {
+	let displayHeight = document.getElementById("tablet").clientHeight;
 
-let numImgs = inRow * numRows;
-let theseImgs = [];
-theseImgs = randomImgSelection(numImgs);
-//console.log(theseImgs);
+	let numRows = Math.ceil((displayHeight + imgH) / imgH);
 
-theseImgs.forEach(item => {
-	let placeImg = document.createElement("img");
-	placeImg.setAttribute("class", "fmImages");
-	placeImg.src = item;
-	placeImg.setAttribute("width", imgW);
-	placeImg.setAttribute("height", imgH);			
-	placeImg.alt = "FarmersMarkets";
-//	console.log(placeImg);
-	document.getElementById("displayCase").prepend(placeImg);
-});
+	let numImgs = inRow * numRows;
+	let theseImgs = [];
+	theseImgs = randomImgSelection(numImgs);
 
-
-
-
-
-/*
-let overall = window.innerWidth;
-console.log(overall);
-let subtract = document.body.clientWidth;
-console.log(subtract);
-let ans = (overall - subtract);
-console.log(ans);
-*/
-
-
-/*
-window.onresize = () => {
-	setTimeout(() => {
-		location.reload()
-	}, 500);
+	loadRows(numRows, inRow, theseImgs);
 };
-*/
+
+
+
+
+
+
