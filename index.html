@@ -10,14 +10,14 @@
 	
 	<meta name="description" content="We locate the closest Farmers Market to you in the Charlotte, NC area.">
 	
-	<link rel="shortcut icon" href="./image/favicon/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
 
 	<link rel="stylesheet" type="text/css" href="cssIndex.css">
 
 </head>
 <body>
 
-	<div id="displayCase">		
+	<div id="displayCase">
 		<div id="tablet">
 			<div id="looking" class="openingText"><h1>Looking for a local Farmers' Market?</h1></div>
 			<div id="explain" class="openingText">Maybe there's one just around the corner from where you are!  If not I am sure there is one closer than you think.  I put this map together to maybe help you find the most convient market.  Or you can use this to locate other markets that you have not been to.  There is always something new at each one.  Whatever the time of year.  Click on the tab and it will take you to a page that describes the market in a little more detail.  Take the next step and enjoy the adventure.</div>
@@ -31,7 +31,29 @@
 
 	</div>
 
+	<div id="padHolder"></div>
+
+	<div id="refUrls">
+		<div id="urlIntro">I picked a coulpe of sites that you maybe interested in.</div>
+
+		<div id="whyFM" class="url"><a href="https://www.nutrition.gov/shopping-cooking-and-food-safety/farmers-markets" target="_blank">An answer</a> to "why Farmers Market" from the Department of Agriculture.</div>
+
+		<div id="whyEat" class="url">Department of Agriculture asks <a href="https://www.choosemyplate.gov/vegetables-nutrients-health" target="_blank">"Why eat vegetables"</a>?</div>
+
+		<div id="nutritionFDA" class="url"><a href="https://www.fda.gov/food/food-labeling-nutrition/nutrition-information-raw-fruits-vegetables-and-fish" target="_blank">Nutrition information</a> from the Food & Drug Administration.</div>
+
+		<div id="nutritionVeg" class="url"><a href="https://www.nutritionadvance.com/healthy-foods/types-of-vegetables/" target="_blank">A listing</a> of nutritional information for different vegetables.</div>
+
+		<div id="inSeason" class="url">and <a href="https://www.seasonalfoodguide.org/" target="_blank">A listing</a> of foods and when they are in season.</div>
+	</div>
+
 	<script src="javascriptIndex.js"></script>
+	<script src="javascriptMapData.js"></script>
+	<script src="javascriptMap.js"></script>
+
+	<script async defer
+  		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfra23mh9kMkncQSRFISP0_bFX_uvuL6A&callback=initMap">
+	</script>
 
 </body>
 </html>

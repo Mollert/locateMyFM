@@ -1,0 +1,36 @@
+
+@font-face { src: url("./font/crayone.otf"); font-family: crayone; }
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: crayone;
+}
+
+#section {
+	width: 90vw;
+	height: 50rem;
+	margin: 5vw 0 0 5vw;
+	background-color: green;
+	opacity: 0.6;
+}
+
+#marketTitle {
+	font-size: 2.8rem;
+	font-weight: bold;
+	text-align: center;
+	padding: 3rem 0;
+}
+
+#marketInfo {
+	margin: 0 8vw 0 16vw;
+	font-size: 1.4rem;
+}
+
+.hours {
+	margin: 0 0 0 1rem;
+}
+
+.moreInfo {
+	margin: 1.2rem 0 0 0;
+}

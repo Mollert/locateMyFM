@@ -21,12 +21,12 @@ const loadRows = (allRows, eachRow, images) => {
 	let imgTally = 0;
 	let rowTally = 0;
 
-	for ( r = 0 ; r < allRows ; r++ ) {
+	for ( let r = 0 ; r < allRows ; r++ ) {
 		let groupDiv = document.createElement("div");
 		groupDiv.setAttribute("class", "imgDivs");
 		document.getElementById("displayCase").appendChild(groupDiv);
 
-		for ( i = 0 ; i < eachRow ; i++ ) {		
+		for ( let i = 0 ; i < eachRow ; i++ ) {		
 			let placeImg = document.createElement("img");
 			placeImg.setAttribute("class", "fmImages");
 			placeImg.src = images[imgTally];
@@ -62,13 +62,18 @@ imgH = parseFloat(imgH);
 window.onload = () => {
 	let displayHeight = document.getElementById("tablet").clientHeight;
 
-	let numRows = Math.ceil((displayHeight + imgH) / imgH);
+	let numRows = Math.ceil((displayHeight + imgH) / (imgH + 6.2));
 
 	let numImgs = inRow * numRows;
 	let theseImgs = [];
 	theseImgs = randomImgSelection(numImgs);
 
 	loadRows(numRows, inRow, theseImgs);
+
+	caseHeight = ((numRows * imgH) / 16) + (numRows *.4);
+	
+	document.getElementById("displayCase").style.height = caseHeight + "rem";
+
 };
 
 
